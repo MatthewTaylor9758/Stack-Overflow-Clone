@@ -15,7 +15,7 @@ module.exports = {
       },
       username: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING(60),
         unique: true,
       },
       hashedPassword: {
