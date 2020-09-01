@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-const SET_USER = 'SET_USER';
+const SET_USER = 'auth/SET_USER';
 
 const setUser = (user) => {
   return {
@@ -29,7 +29,7 @@ export const login = (username, password) => {
   }
 }
 
-// window.login = login;
+window.login = login;
 
 export default function authReducer(state={}, action) {
   switch (action.type) {
