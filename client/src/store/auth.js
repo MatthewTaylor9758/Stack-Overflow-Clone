@@ -10,9 +10,7 @@ export const setUser = (user) => {
 }
 
 export const login = (username, password) => {
-  debugger
   return async dispatch => {
-    debugger
     const res = await fetch('/api/session', {
       method: 'put',
       headers: {
@@ -23,13 +21,14 @@ export const login = (username, password) => {
     });
     res.data = await res.json(); // { user: {...} }
     if (res.ok) {
+      console.log(res.data.user);
       dispatch(setUser(res.data.user));
     }
     return res;
   }
 }
 
-window.login = login;
+// window.login = login;
 
 export default function authReducer(state={}, action) {
   switch (action.type) {

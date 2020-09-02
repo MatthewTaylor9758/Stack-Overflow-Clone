@@ -14,7 +14,7 @@ function LoginPage() {
     dispatch(login(username, password));
   }
 
-  if (isLoggedIn) return <Redirect to='/' />
+  if (isLoggedIn) return <Redirect to='/profile' />
 
   return (
     <form onSubmit={handleSubmit}>
