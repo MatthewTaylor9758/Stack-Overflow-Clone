@@ -4,7 +4,8 @@ import Cookies from 'js-cookie';
 import { Redirect } from 'react-router-dom';
 
 function ProfilePage() {
-
+  const username = useSelector(state => state.auth.username);
+  console.log(username)
   const handleLogOut = async (e) => {
     const res = await fetch('/api/session', {
       method: 'DELETE',
@@ -18,7 +19,7 @@ function ProfilePage() {
 
   return (
     <>
-      <h1>Hello user! This is a working test!!!</h1>
+      <h1>{`Hello ${username}! This is a working test!!!`}</h1>
       <button onClick={handleLogOut}>Log Out</button>
     </>
   );

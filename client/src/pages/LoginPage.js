@@ -14,30 +14,37 @@ function LoginPage() {
     dispatch(login(username, password));
   }
 
+  const DemoSignIn = (e) => {
+    dispatch(login('Demo-lition', 'password'))
+  }
+
   if (isLoggedIn) return <Redirect to='/profile' />
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username
-      <input
-        type='text'
-        name='username'
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      </label>
-      <label>
-        Password
+    <>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username
         <input
-          type='password'
-          name='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          type='text'
+          name='username'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
-      </label>
-      <button type='submit'>Log In</button>
-    </form>
+        </label>
+        <label>
+          Password
+          <input
+            type='password'
+            name='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <button type='submit'>Log In</button>
+      </form>
+      <button onClick={DemoSignIn}>Demo Login</button>
+    </>
   );
 }
 
