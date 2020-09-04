@@ -19,13 +19,53 @@ export const login = (username, password) => {
       },
       body: JSON.stringify({ username, password })
     });
+    console.log(res);
     res.data = await res.json(); // { user: {...} }
+    console.log(res);
+    console.log(res.data);
     if (res.ok) {
       console.log(res.data.user);
       dispatch(setUser(res.data.user));
     }
     return res;
   }
+}
+
+// export const signup = (email, username, password) => {
+//   console.log('meow');
+//   return async dispatch => {
+//     const res = await fetch('/api/users', {
+//       method: 'post',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+//       },
+//       body: JSON.stringify({ email, username, password })
+//     });
+//     console.log(res);
+//     res.data = await res.json(); // { user: {...} }
+//     console.log(res);
+//     console.log(res.data);
+//     if (res.ok) {
+//       console.log(res.data.user);
+//       dispatch(setUser(res.data.user));
+//     }
+//     return res;
+//   }
+// }
+
+export const signup = async (username, email, password, confirmPassword) => {
+  console.log(username, email, password);
+    const res = await fetch('/api/users', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        'XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+      },
+      body: JSON.stringify({ username, email, password, confirmPassword })
+    })
+    res.data = res.json();
+    return res.data;
 }
 
 // window.login = login;

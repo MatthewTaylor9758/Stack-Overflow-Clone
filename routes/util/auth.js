@@ -49,7 +49,7 @@ function restoreUser(req, _res, next) {
       return next(err);
     }
 
-    next();
+    return next();
   });
 }
 
@@ -66,7 +66,7 @@ function getCurrentUser(req, _res, next) {
       const userId = payload.data.id;
       req.user = await User.getCurrentUserById(userId);
     }
-    next();
+    return next();
   });
 }
 const requireUser = [restoreUser];
