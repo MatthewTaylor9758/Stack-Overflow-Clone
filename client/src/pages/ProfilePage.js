@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
+import { fetchQuestions } from '../store/questions';
 import { Redirect } from 'react-router-dom';
 
 function ProfilePage() {
   const username = useSelector(state => state.auth.username);
+  const dispatch = useDispatch();
   console.log(username)
   const handleLogOut = async (e) => {
     const res = await fetch('/api/session', {
@@ -17,10 +19,16 @@ function ProfilePage() {
     window.location.href = '/login';
   }
 
+  const toMainPage = () => {
+    window.location.href = './login'; // should be './main-page'
+    dispatch(fetchQuestions());
+  }
+
   return (
     <>
       <h1>{`Hello ${username}! This is a working test!!!`}</h1>
       <button onClick={handleLogOut}>Log Out</button>
+      <button onClick={toMainPage}>Main Page</button>
     </>
   );
 }

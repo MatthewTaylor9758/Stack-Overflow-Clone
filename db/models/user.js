@@ -58,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Answer, {
       foreignKey: 'userId'
     });
-    User.hasMany(models.Votes, {
+    User.hasMany(models.Vote, {
       foreignKey: 'userId'
     })
   };

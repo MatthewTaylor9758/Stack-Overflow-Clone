@@ -27,6 +27,7 @@ export const login = (username, password) => {
       console.log(res.data.user);
       dispatch(setUser(res.data.user));
     }
+    console.log(res);
     return res;
   }
 }

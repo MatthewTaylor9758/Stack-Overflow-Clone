@@ -4,6 +4,7 @@ import { login } from '../store/auth';
 import { Redirect, NavLink } from 'react-router-dom';
 import '../loginPage.css';
 import stackOverflowLogo from '../images/stackOverflowLogo.png';
+import { fetchQuestions } from '../store/questions';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -14,12 +15,17 @@ function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(username, password));
+    dispatch(fetchQuestions())
   }
 
   const DemoSignIn = (e) => {
     dispatch(login('Demo-lition', 'password'))
+    dispatch(fetchQuestions())
   }
-  if (isLoggedIn) return <Redirect to='/profile' />
+  if (isLoggedIn) {
+    dispatch(fetchQuestions())
+    return <Redirect to='/main-page' />
+  }
 
   return (
     <div className='login-body'>

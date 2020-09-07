@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup, login } from '../store/auth';
 
+
 function SignUpPage() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');

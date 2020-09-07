@@ -9,6 +9,8 @@ html {
   display: flex;
   /* justify-content: space-between; */
   position: fixed;
+  align-items: center;
+  top: 0px;
   background-color: white;
   height: 47px;
   width: 100%;
@@ -19,6 +21,10 @@ html {
 
 #search-bar {
   flex-grow: 1;
+  text-align: center;
+  border: 1px solid #bbc0c4;
+  border-radius: 3px;
+  margin: 0 5px;
 }
 
 .nav-bar-links {
