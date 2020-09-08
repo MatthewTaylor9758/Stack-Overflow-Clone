@@ -17,6 +17,7 @@ html {
   margin: 0;
   border-top: 2px solid orangered;
   z-index: 3;
+  box-shadow: 1px 1px 3px lightgray;
 }
 
 #search-bar {
