@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
 import { fetchQuestions } from '../store/questions';
 import { Redirect } from 'react-router-dom';
+import '../profilePage.css';
 
 function ProfilePage() {
   const username = useSelector(state => state.auth.username);
@@ -25,11 +26,12 @@ function ProfilePage() {
   }
 
   return (
-    <>
-      <h1>{`Hello ${username}! This is a working test!!!`}</h1>
+    <div id='container'>
+      <p>Under Construction</p>
+      {/* <h1>{`Hello ${username}! This is a working test!!!`}</h1> */}
       <button onClick={handleLogOut}>Log Out</button>
       <button onClick={toMainPage}>Main Page</button>
-    </>
+    </div>
   );
 }
 

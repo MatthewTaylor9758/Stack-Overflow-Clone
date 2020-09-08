@@ -29,7 +29,7 @@ function LoginPage() {
 
   return (
     <div className='login-body'>
-      <div className='container'>
+      <div className='container-login'>
         <div className='central-login'>
           <div className='logo'>
             <img src={stackOverflowLogo} />

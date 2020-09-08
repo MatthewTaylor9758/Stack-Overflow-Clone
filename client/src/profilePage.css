@@ -1,0 +1,10 @@
+#container {
+  margin-top: 71px;
+  display: grid;
+  grid-template-columns: 164px 1fr 200px;
+  width: 100%;
+}
+
+#container > p {
+  text-align: center;
+}

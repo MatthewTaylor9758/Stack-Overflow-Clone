@@ -1,8 +1,4 @@
-/* @import './index.css'; */
-
-body {
-  background-color: white;
-}
+@import './index.css';
 
 .container {
   /* background-color: #fdf7e3; */

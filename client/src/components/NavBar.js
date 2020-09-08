@@ -4,6 +4,7 @@ import hamburgerIconKinda from '../images/hamburgerIconKinda.png';
 import stackOverflowImageWhite from '../images/stackOverflowIconWhite.png';
 import LoginPage from '../pages/LoginPage';
 import SignUpPage from '../pages/SignUpPage';
+import Cookies from 'js-cookie';
 
 function NavBar() {
 
@@ -13,6 +14,17 @@ function NavBar() {
 
   const handleSignUp = () => {
     window.location.href = './signup';
+  }
+
+  const handleLogOut = async (e) => {
+    const res = await fetch('/api/session', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'XSRF-TOKEN': Cookies.get('XSRF-TOKEN')
+      }
+    });
+    window.location.href = '/login';
   }
 
   return (
@@ -39,6 +51,7 @@ function NavBar() {
         <div>
           <button onClick={handleLogIn}>Log in</button>
           <button onClick={handleSignUp}>Sign up</button>
+          <button onClick={handleLogOut}>Log Out</button>
         </div>
       </nav>
     </>

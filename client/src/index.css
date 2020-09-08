@@ -37,4 +37,6 @@ html {
 
 .nav-logo {
   width: 150px;
+  height: 40px;
+  align-self: flex-end;
 }
