@@ -2,7 +2,7 @@ body {
   background-color: white;
 }
 
-#container {
+#container.profile-container {
   margin-top: 71px;
   display: grid;
   grid-template-columns: 164px 1fr 200px;
@@ -11,6 +11,12 @@ body {
   position: absolute;
   top: -24px;
   padding-top: 24px;
+  padding-bottom: 0px;
+}
+
+#left-side-bar.profile-left-bar {
+  height: 100vh;
+  position: sticky;
 }
 
 #container > p {
@@ -28,8 +34,10 @@ body {
 
 #user-info-container {
   display: flex;
+  width: 100%;
   flex-direction: column;
   border-left: 1px solid #bbc0c4;
+  box-sizing: border-box;
 }
 
 #user-info {

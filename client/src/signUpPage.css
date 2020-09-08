@@ -51,7 +51,7 @@ div.sign-up-body {
 div.sign-up-page-container {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 100%;
   height: fit-content;
   background-color: white;
   padding: 24px;

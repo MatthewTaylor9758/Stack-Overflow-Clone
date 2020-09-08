@@ -27,8 +27,8 @@ function ProfilePage() {
   }
 
   return (
-    <div id='container'>
-      <div id='left-side-bar'>
+    <div id='container' className='profile-container'>
+      <div id='left-side-bar' className='profile-left-bar'>
         <p>Under Construction</p>
       </div>
       {/* <h1>{`Hello ${username}! This is a working test!!!`}</h1> */}
@@ -42,6 +42,7 @@ function ProfilePage() {
             <div>Student at App Academy</div>
             <div>(Your about me is currently blank.)</div>
             <div>About me editing currently under construction.</div>
+            <button onClick={toMainPage}>Main Page</button>
           </div>
         </div>
         <div id='user-helpful-links'>
