@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
         validates: {
-          len: [1, 255],
+          len: [5, 60],
         },
       },
       hashedPassword: {
@@ -42,11 +42,25 @@ module.exports = (sequelize, DataTypes) => {
         loginUser: {
           attributes: {},
         },
+        profile: {
+          attributes: {
+            exclude: ["hashedPassword", "email", "updatedAt"],
+          }
+        }
       },
     }
   );
 
   User.associate = function(models) {
+    User.hasMany(models.Question, {
+      foreignKey: 'userId'
+    });
+    User.hasMany(models.Answer, {
+      foreignKey: 'userId'
+    });
+    User.hasMany(models.Vote, {
+      foreignKey: 'userId'
+    })
   };
 
   User.prototype.toSafeObject = function() {

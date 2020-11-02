@@ -1,1 +1,43 @@
 /* TODO Add site wide styles */
+html {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-bar {
+  display: flex;
+  /* justify-content: space-between; */
+  position: fixed;
+  align-items: center;
+  top: 0px;
+  background-color: white;
+  height: 47px;
+  width: 100%;
+  margin: 0;
+  border-top: 2px solid orangered;
+  z-index: 3;
+  box-shadow: 1px 1px 3px lightgray;
+}
+
+#search-bar {
+  flex-grow: 1;
+  text-align: center;
+  border: 1px solid #bbc0c4;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.nav-bar-links {
+  padding: 5px;
+}
+
+.nav-burger {
+  width: 44px;
+}
+
+.nav-logo {
+  width: 150px;
+  height: 40px;
+  align-self: flex-end;
+}
