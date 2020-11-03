@@ -101,3 +101,14 @@
   display: flex;
   justify-content: space-between;
 }
+
+.question-and-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-button {
+  height: fit-content;
+  justify-self: flex-start;
+  align-self: center;
+}

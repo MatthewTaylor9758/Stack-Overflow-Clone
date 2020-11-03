@@ -41,6 +41,10 @@ function MainPage() {
     dispatch(fetchQuestions())
   };
 
+  const handleQuestionDelete = (e) => {
+
+  }
+
   return (
     <div className='container'>
       <div id='left-side-bar'>
@@ -64,7 +68,16 @@ function MainPage() {
                     <div className='vote-text'>Votes</div>
                   </div>
                   <div className='question-content-div'>
-                    <h3>{question.content}</h3>
+                    <div className='question-and-delete'>
+                      <h3>{question.content}</h3>
+                      {username === question.User.username ?
+                        <button  className='delete-button' onClick={handleQuestionDelete}>Delete</button>
+                        :
+                        <div>
+
+                        </div>
+                      }
+                    </div>
                     <div className='question-details'>
                       <div className='tags'>Tags Coming Soon!</div>
                       <div className='username'>asked by {question.User.username}</div>
