@@ -20,7 +20,7 @@ export const fetchQuestions = () => {
   }
 }
 
-export const askQuestion= async (userId, content, score) => {
+export const askQuestion = async (userId, content, score) => {
   console.log(userId, content, score);
     const res = await fetch('/api/questions', {
       method: 'post',
@@ -32,6 +32,22 @@ export const askQuestion= async (userId, content, score) => {
     })
     res.data = res.json();
     return res.data;
+}
+
+export const deleteQuestion = async (questionId) => {
+  console.log(questionId);
+  const res = await fetch('/api/questions/', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+    },
+    body: JSON.stringify({ questionId })
+  });
+  console.log('hello')
+  res.data = await res.json();
+  console.log(res.data);
+  return res.data;
 }
 
 export default function questionsReducer(state={}, action) {

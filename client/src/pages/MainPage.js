@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import codebackgrounddrip from '../images/codeBackgroundDrip.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
-import { fetchQuestions, getQuestions } from '../store/questions';
+import { fetchQuestions, getQuestions, deleteQuestion } from '../store/questions';
 import '../mainPage.css';
 
 function MainPage() {
@@ -41,8 +41,8 @@ function MainPage() {
     dispatch(fetchQuestions())
   };
 
-  const handleQuestionDelete = (e) => {
-
+  const handleQuestionDelete = async (e) => {
+    deleteQuestion(e.target.value);
   }
 
   return (
@@ -71,7 +71,7 @@ function MainPage() {
                     <div className='question-and-delete'>
                       <h3>{question.content}</h3>
                       {username === question.User.username ?
-                        <button  className='delete-button' onClick={handleQuestionDelete}>Delete</button>
+                        <button value={question.id} className='delete-button' onClick={handleQuestionDelete}>Delete</button>
                         :
                         <div>
 

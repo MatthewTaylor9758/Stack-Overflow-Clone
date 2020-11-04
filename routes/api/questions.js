@@ -10,11 +10,14 @@ const {
 
 const router = express.Router();
 
-router.delete(
-  '/:questionId',
+router.put(
+  '/',
   asyncHandler(async(req, res, next) => {
-    const question = req.params;
+    const question = req.body.questionId;
     console.log(question)
+    console.log('hello')
+
+    return question
   })
 )
 
