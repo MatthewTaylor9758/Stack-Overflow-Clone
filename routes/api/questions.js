@@ -10,6 +10,14 @@ const {
 
 const router = express.Router();
 
+router.delete(
+  '/:questionId',
+  asyncHandler(async(req, res, next) => {
+    const question = req.params;
+    console.log(question)
+  })
+)
+
 router.get(
   '/',
   asyncHandler(async(req, res, next) => {
@@ -28,5 +36,6 @@ router.post(
     return res.json({ question });
   })
 )
+
 
 module.exports = router;
