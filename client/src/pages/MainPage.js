@@ -26,6 +26,10 @@ function MainPage() {
 
   // useEffect(fetchQuestions)
 
+  useEffect(() => {
+    dispatch(fetchQuestions());
+  }, [])
+
   const toProfile = () => {
     window.location.href = './profile';
     dispatch(fetchQuestions())
