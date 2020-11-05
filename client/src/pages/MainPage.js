@@ -56,9 +56,13 @@ function MainPage() {
       <div id='questions-area'>
         <div id='header'>
           <p>Top Questions</p>
-          <button onClick={getQuestions}>Fetch Questions</button>
-          <button onClick={toProfile}>Profile</button>
-          <button onClick={askQuestion}>Ask Question</button>
+          {/* <button onClick={getQuestions}>Fetch Questions</button> */}
+          <div>
+            <button onClick={toProfile}>Profile</button>
+          </div>
+          <div id='askQuestionButton'>
+            <button onClick={askQuestion}>Ask Question</button>
+          </div>
         </div>
         {/* <ul id='questions'>
           {questions.length ? questions.map( question =>
