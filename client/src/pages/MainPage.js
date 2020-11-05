@@ -42,7 +42,7 @@ function MainPage() {
   };
 
   const handleQuestionDelete = async (e) => {
-    deleteQuestion(e.target.value);
+    await deleteQuestion(e.target.value);
   }
 
   return (

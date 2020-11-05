@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { Question, User } = require('../../db/models');
+const { Question, User, Answer } = require('../../db/models');
 const { generateToken } = require("../util/auth");
 const {
   jwtConfig: { expiresIn },
@@ -13,11 +13,21 @@ const router = express.Router();
 router.put(
   '/',
   asyncHandler(async(req, res, next) => {
-    const question = req.body.questionId;
-    console.log(question)
+    const question_id = req.body.questionId;
+    console.log(question_id)
     console.log('hello')
-
-    return question
+    const answers = await Answer.findAll({
+      where: {
+        questionId: question_id
+      }
+    })
+    console.log(answers);
+    const question = await Question.findByPk(question_id);
+    console.log(question);
+    await question.destroy();
+    console.log('fucking work already')
+    // res.status(204).end();
+    // return question
   })
 )
 

@@ -36,7 +36,7 @@ export const askQuestion = async (userId, content, score) => {
 
 export const deleteQuestion = async (questionId) => {
   console.log(questionId);
-  const res = await fetch('/api/questions/', {
+  const res = await fetch('/api/questions', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -46,8 +46,8 @@ export const deleteQuestion = async (questionId) => {
   });
   console.log('hello')
   res.data = await res.json();
-  console.log(res.data);
-  return res.data;
+  // console.log(res.data);
+  // return res.data;
 }
 
 export default function questionsReducer(state={}, action) {
