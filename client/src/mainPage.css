@@ -2,6 +2,10 @@ button:hover {
   cursor: pointer;
 }
 
+button {
+  background-color: red;
+}
+
 .container {
   /* background-color: #fdf7e3; */
   margin-top: 71px;
@@ -40,6 +44,8 @@ button:hover {
   /* box-sizing: border-box; */
   border-left: 1px solid #bbc0c4;
   background-color: #fdf7e3;
+  box-shadow: 0px 0px 10px lightgray;
+  margin-left: 10px;
 }
 
 #left-side-bar {
@@ -48,6 +54,7 @@ button:hover {
   height: 100vh;
   text-align: center;
   background-color: white;
+  box-shadow: 0px 0px 10px lightgray;
 }
 
 #right-side-bar {
@@ -55,7 +62,7 @@ button:hover {
   position: sticky;
   background-color: #fdf7e3;
   text-align: center;
-  border: 1px solid #f1e5bc;
+  /* border: 1px solid #f1e5bc; */
   border-radius: 3px;
   box-shadow: 0px 0px 10px lightgray;
   margin-right: 20px;
