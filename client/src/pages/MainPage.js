@@ -5,6 +5,10 @@ import Cookies from 'js-cookie';
 import { fetchQuestions, getQuestions, deleteQuestion } from '../store/questions';
 import '../mainPage.css';
 
+function useForceUpdate() {
+
+}
+
 function MainPage() {
   const dispatch = useDispatch();
   // const [questionList, setQuestionList] = useState(dispatch(fetchQuestions))
@@ -27,8 +31,13 @@ function MainPage() {
   // useEffect(fetchQuestions)
 
   useEffect(() => {
+    console.log('testing')
     dispatch(fetchQuestions());
   }, [])
+
+  // useEffect(() => {
+  //   dispatch(fetchQuestions())
+  // }, [questions])
 
   const toProfile = () => {
     window.location.href = './profile';
@@ -45,7 +54,9 @@ function MainPage() {
   };
 
   const handleQuestionDelete = async (e) => {
-    await deleteQuestion(e.target.value);
+    const res = await deleteQuestion(e.target.value);
+    console.log(res);
+    getQuestions()
   }
 
   return (

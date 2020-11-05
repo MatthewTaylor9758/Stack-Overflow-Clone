@@ -45,7 +45,9 @@ export const deleteQuestion = async (questionId) => {
     body: JSON.stringify({ questionId })
   });
   console.log('hello')
-  res.data = await res.json();
+  console.log(res);
+  // res.data = await res.json();
+  // dispatch(fetchQuestions())
   // console.log(res.data);
   // return res.data;
 }
