@@ -22,12 +22,10 @@ router.put(
       }
     })
     console.log(answers);
+    const deleteAnswers = answers.map(async answer => await answer.destroy())
     const question = await Question.findByPk(question_id);
     console.log(question);
     await question.destroy();
-    console.log('fucking work already')
-    // res.status(204).end();
-    // return question
   })
 )
 
