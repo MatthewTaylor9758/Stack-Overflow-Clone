@@ -12,7 +12,6 @@ function MainPage() {
   const questions = useSelector(state => state.questions);
 
   // useEffect(() => {
-  //   console.log('fucking work already');
   //   let res;
   //   (async function goGetQuestions() {
   //     res = await fetch('/api/questions');

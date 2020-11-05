@@ -34,7 +34,8 @@ router.get(
   asyncHandler(async(req, res, next) => {
     console.log('********************')
     const questions = await Question.findAll({
-      include: { model: User }
+      include: { model: User },
+      order: [['updatedAt', 'DESC']]
     });
     res.json({ questions });
   })
