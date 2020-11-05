@@ -47,7 +47,7 @@ function NewQuestion() {
               placeholder='e.g. (python-3.c pandas android)'
               onChange={(e) => setTags(e.target.value)}
             />
-            <button type='submit' className='submit-question'>Submit Question</button>
+            <button type='submit' id='submitQuestion' className='submit-question'>Submit Question</button>
           </form>
         </div>
         <div id='steps-div'>
