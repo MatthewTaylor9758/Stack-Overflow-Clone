@@ -1,9 +1,15 @@
 button:hover {
   cursor: pointer;
+  background-color: red;
+  color: black;
 }
 
 button {
-  background-color: red;
+  border: none;
+  background-color: lightgray;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 3px;
 }
 
 .container {
