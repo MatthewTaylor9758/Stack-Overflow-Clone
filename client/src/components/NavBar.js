@@ -35,7 +35,9 @@ function NavBar() {
           <img src={hamburgerIconKinda} className='nav-burger' />
         </div>
         <div>
-          <img src={stackOverflowImageWhite} className='nav-logo' />
+          <a href='./main-page'>
+            <img src={stackOverflowImageWhite} className='nav-logo' />
+          </a>
         </div>
         <div className='nav-bar-links'>
           Coming Soon!
