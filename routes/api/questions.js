@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { Question, User } = require('../../db/models');
+const { Question, User, Answer } = require('../../db/models');
 const { generateToken } = require("../util/auth");
 const {
   jwtConfig: { expiresIn },
@@ -10,11 +10,22 @@ const {
 
 const router = express.Router();
 
-router.delete(
-  '/:questionId',
+router.put(
+  '/',
   asyncHandler(async(req, res, next) => {
-    const question = req.params;
-    console.log(question)
+    const question_id = req.body.questionId;
+    console.log(question_id)
+    console.log('hello')
+    const answers = await Answer.findAll({
+      where: {
+        questionId: question_id
+      }
+    })
+    console.log(answers);
+    const deleteAnswers = answers.map(async answer => await answer.destroy())
+    const question = await Question.findByPk(question_id);
+    console.log(question);
+    await question.destroy();
   })
 )
 
