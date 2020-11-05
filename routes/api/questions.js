@@ -26,6 +26,8 @@ router.put(
     const question = await Question.findByPk(question_id);
     console.log(question);
     await question.destroy();
+    res.status(204).end();
+    // return {'question': question}
   })
 )
 

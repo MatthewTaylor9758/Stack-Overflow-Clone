@@ -5,6 +5,7 @@ import stackOverflowImageWhite from '../images/stackOverflowIconWhite.png';
 import LoginPage from '../pages/LoginPage';
 import SignUpPage from '../pages/SignUpPage';
 import Cookies from 'js-cookie';
+import '../navBar.css';
 
 function NavBar() {
 
@@ -34,7 +35,9 @@ function NavBar() {
           <img src={hamburgerIconKinda} className='nav-burger' />
         </div>
         <div>
-          <img src={stackOverflowImageWhite} className='nav-logo' />
+          <a href='./main-page'>
+            <img src={stackOverflowImageWhite} className='nav-logo' />
+          </a>
         </div>
         <div className='nav-bar-links'>
           Coming Soon!
@@ -49,9 +52,9 @@ function NavBar() {
           Search-Bar Coming Soon!
         </div>
         <div>
-          <button onClick={handleLogIn}>Log in</button>
-          <button onClick={handleSignUp}>Sign up</button>
-          <button onClick={handleLogOut}>Log Out</button>
+          <button className='navButton' onClick={handleLogIn}>Log in</button>
+          <button className='navButton' onClick={handleSignUp}>Sign up</button>
+          <button id='logoutButton' className='navButton' onClick={handleLogOut}>Log Out</button>
         </div>
       </nav>
     </>

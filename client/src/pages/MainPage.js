@@ -5,6 +5,10 @@ import Cookies from 'js-cookie';
 import { fetchQuestions, getQuestions, deleteQuestion } from '../store/questions';
 import '../mainPage.css';
 
+function useForceUpdate() {
+
+}
+
 function MainPage() {
   const dispatch = useDispatch();
   // const [questionList, setQuestionList] = useState(dispatch(fetchQuestions))
@@ -26,6 +30,15 @@ function MainPage() {
 
   // useEffect(fetchQuestions)
 
+  useEffect(() => {
+    console.log('testing')
+    dispatch(fetchQuestions());
+  }, [])
+
+  // useEffect(() => {
+  //   dispatch(fetchQuestions())
+  // }, [questions])
+
   const toProfile = () => {
     window.location.href = './profile';
     dispatch(fetchQuestions())
@@ -41,7 +54,9 @@ function MainPage() {
   };
 
   const handleQuestionDelete = async (e) => {
-    await deleteQuestion(e.target.value);
+    const res = await deleteQuestion(e.target.value);
+    console.log(res);
+    getQuestions()
   }
 
   return (
@@ -52,9 +67,13 @@ function MainPage() {
       <div id='questions-area'>
         <div id='header'>
           <p>Top Questions</p>
-          <button onClick={getQuestions}>Fetch Questions</button>
-          <button onClick={toProfile}>Profile</button>
-          <button onClick={askQuestion}>Ask Question</button>
+          {/* <button onClick={getQuestions}>Fetch Questions</button> */}
+          <div>
+            <button onClick={toProfile}>Profile</button>
+          </div>
+          <div id='askQuestionButton'>
+            <button onClick={askQuestion}>Ask Question</button>
+          </div>
         </div>
         {/* <ul id='questions'>
           {questions.length ? questions.map( question =>
