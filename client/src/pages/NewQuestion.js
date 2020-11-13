@@ -17,6 +17,7 @@ function NewQuestion() {
   }
 
   return (
+    <div id='outer-container'>
       <div id='container' className='new-question'>
         <div id='form-container'>
           <form onSubmit={handleSubmit} id='ask-question-form'>
@@ -71,6 +72,7 @@ function NewQuestion() {
           </div>
         </div>
       </div>
+    </div>
   )
 }
 
