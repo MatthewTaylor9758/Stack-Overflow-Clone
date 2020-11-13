@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import hamburgerIconKinda from '../images/hamburgerIconKinda.png';
 import stackOverflowImageWhite from '../images/stackOverflowIconWhite.png';
@@ -8,7 +9,8 @@ import Cookies from 'js-cookie';
 import '../navBar.css';
 
 function NavBar() {
-
+  const username = useSelector(state => state.auth.username);
+  // const username = 'meow'
   const handleLogIn = () => {
     window.location.href = './login';
   }
@@ -52,9 +54,14 @@ function NavBar() {
           Search-Bar Coming Soon!
         </div>
         <div>
-          <button className='navButton' onClick={handleLogIn}>Log in</button>
-          <button className='navButton' onClick={handleSignUp}>Sign up</button>
-          <button id='logoutButton' className='navButton' onClick={handleLogOut}>Log Out</button>
+          {username ?
+            <button id='logoutButton' className='navButton' onClick={handleLogOut}>Log Out</button>
+          :
+          <>
+            <button className='navButton' onClick={handleLogIn}>Log in</button>
+            <button className='navButton' onClick={handleSignUp}>Sign up</button>
+          </>
+           }
         </div>
       </nav>
     </>
