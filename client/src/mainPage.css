@@ -101,6 +101,10 @@ button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#header > div > button:hover {
+  background-color: rgb(0,99,205);
+}
+
 #header > div {
   display: flex;
   justify-content: center;

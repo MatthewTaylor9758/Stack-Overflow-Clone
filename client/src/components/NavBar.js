@@ -39,7 +39,7 @@ function NavBar() {
             <img src={stackOverflowImageWhite} className='nav-logo' />
           </a>
         </div>
-        <div className='nav-bar-links'>
+        {/* <div className='nav-bar-links'>
           Coming Soon!
         </div>
         <div className='nav-bar-links'>
@@ -47,7 +47,7 @@ function NavBar() {
         </div>
         <div className='nav-bar-links'>
           Coming Soon!
-        </div>
+        </div> */}
         <div id='search-bar'>
           Search-Bar Coming Soon!
         </div>
