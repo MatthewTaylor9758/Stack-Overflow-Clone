@@ -5,6 +5,7 @@ import ProfilePage from './ProfilePage';
 import SignUpPage from './SignUpPage';
 import MainPage from './MainPage';
 import NewQuestion from './NewQuestion';
+import AnswerPage from './AnswerPage';
 
 export default function Pages() {
   return (
@@ -15,6 +16,7 @@ export default function Pages() {
       <Route exact path='/signup' component={SignUpPage} />
       <Route exact path='/main-page' component={MainPage} />
       <Route exact path='/ask-question' component={NewQuestion} />
+      <Route exact path='/answers' component={AnswerPage} />
       <Route path='*' component={LoginPage} />
     </Switch>
     </>

@@ -1,28 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchQuestions, deleteQuestion } from '../store/questions';
-import '../mainPage.css';
+import '../answerPage.css';
 
-function MainPage() {
+function AnswerPage() {
   const dispatch = useDispatch();
-  // const [questionList, setQuestionList] = useState(dispatch(fetchQuestions))
   const username = useSelector(state => state.auth.username);
   const questions = useSelector(state => state.questions);
-
-  // useEffect(() => {
-  //   let res;
-  //   (async function goGetQuestions() {
-  //     res = await fetch('/api/questions');
-  //     res.questions = await res.json();
-  //     console.log(res.questions)
-  //     dispatch(await getQuestions(res.questions.questions));
-  //     console.log(res.questions)
-  //     return res;
-  //   })();
-  //   console.log(res);
-  // }, []);
-
-  // useEffect(fetchQuestions)
 
   useEffect(() => {
     console.log('testing')
@@ -58,21 +42,12 @@ function MainPage() {
       <div id='left-side-bar'>
         <p>Under Construction</p>
       </div>
-      <div id='questions-area'>
+      <div id='answers-area'>
         <div id='header'>
-          <p>Top Questions</p>
-          {/* <button onClick={getQuestions}>Fetch Questions</button> */}
           <div>
             <button onClick={toProfile}>Profile</button>
           </div>
-          <div id='askQuestionButton'>
-            <button onClick={askQuestion}>Ask Question</button>
-          </div>
         </div>
-        {/* <ul id='questions'>
-          {questions.length ? questions.map( question =>
-            <li key={question.id}>{question.content} - {question.User.username}</li>) : null}
-        </ul> */}
         {questions.length ? questions.map( question => {
           return <div className='question-div'>
                   <div className='score-div'>
@@ -81,11 +56,7 @@ function MainPage() {
                   </div>
                   <div className='question-content-div'>
                     <div className='question-and-delete'>
-                      <h3>
-                        <a href='./answers'>
-                          {question.content}
-                        </a>
-                      </h3>
+                      <h3>{question.content}</h3>
                       {username === question.User.username ?
                         <button value={question.id} className='delete-button' onClick={handleQuestionDelete}>Delete</button>
                         :
@@ -111,4 +82,4 @@ function MainPage() {
   )
 }
 
-export default MainPage;
+export default AnswerPage;
