@@ -89,10 +89,11 @@ function MainPage() {
                   <div className='question-content-div'>
                     <div className='question-and-delete'>
                       <h3>
-                        <a  onClick={getAnswers}>
+                        <a href='./answers' onClick={getAnswers}>
                           {question.content}
                         </a>
                       </h3>
+                      <p>{question.User.username}</p>
                       {username === question.User.username ?
                         <button value={question.id} className='delete-button' onClick={handleQuestionDelete}>Delete</button>
                         :

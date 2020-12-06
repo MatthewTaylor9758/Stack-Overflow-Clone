@@ -2,16 +2,18 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchQuestions, deleteQuestion } from '../store/questions';
 import '../answerPage.css';
+import { fetchAnswers } from '../store/answers';
 
 function AnswerPage() {
   const dispatch = useDispatch();
   const username = useSelector(state => state.auth.username);
   const questions = useSelector(state => state.questions);
+  const answers = useSelector(state => state.answers);
 
-  useEffect(() => {
-    console.log('testing')
-    dispatch(fetchQuestions());
-  }, [dispatch])
+  // useEffect(() => {
+  //   console.log('testing')
+  //   dispatch(fetchQuestions());
+  // }, [dispatch])
 
   // useEffect(() => {
   //   dispatch(fetchQuestions())
@@ -27,14 +29,14 @@ function AnswerPage() {
   };
 
   // const questions = useSelector(state => state.questions)
-  const getQuestions = (e) => {
-    dispatch(fetchQuestions())
+  const getAnswers = (e) => {
+    dispatch(fetchAnswers())
   };
 
-  const handleQuestionDelete = async (e) => {
+  const handleAnswerDelete = async (e) => {
     const res = await deleteQuestion(e.target.value);
     console.log(res);
-    getQuestions()
+    getAnswers()
   }
 
   return (
@@ -48,17 +50,19 @@ function AnswerPage() {
             <button onClick={toProfile}>Profile</button>
           </div>
         </div>
-        {questions.length ? questions.map( question => {
+        {answers.length ? answers.map( answer => {
           return <div className='question-div'>
                   <div className='score-div'>
-                    <div className='score'>{question.score}</div>
+                    <div className='score'>{answer.score}</div>
                     <div className='vote-text'>Votes</div>
                   </div>
                   <div className='question-content-div'>
                     <div className='question-and-delete'>
-                      <h3>{question.content}</h3>
-                      {username === question.User.username ?
-                        <button value={question.id} className='delete-button' onClick={handleQuestionDelete}>Delete</button>
+                      <h3>{answer.content}</h3>
+                      <p>{answer.userId}</p>
+                      {/* username === answer.User.username */}
+                      { true ?
+                        <button value={answer.id} className='delete-button' onClick={handleAnswerDelete}>Delete</button>
                         :
                         <div>
 
@@ -67,7 +71,7 @@ function AnswerPage() {
                     </div>
                     <div className='question-details'>
                       <div className='tags'>Tags Coming Soon!</div>
-                      <div className='username'>asked by {question.User.username}</div>
+                      {/* <div className='username'>answered by {answer.User.username}</div> */}
                     </div>
                   </div>
                  </div>

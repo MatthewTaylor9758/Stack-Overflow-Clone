@@ -16,6 +16,7 @@ export const fetchQuestions = () => {
     res.questions = await res.json();
     console.log(res.questions);
     dispatch(getQuestions(res.questions.questions));
+    localStorage.setItem('questions', JSON.stringify(res.questions.questions))
     return res;
   }
 }
@@ -52,7 +53,10 @@ export const deleteQuestion = async (questionId) => {
   // return res.data;
 }
 
-export default function questionsReducer(state={}, action) {
+let questions = JSON.parse(localStorage.getItem('questions'))
+const initialState = questions ? questions : {};
+
+export default function questionsReducer(state=initialState, action) {
   // fetchQuestions();
   switch(action.type) {
     case GET_QUESTIONS:

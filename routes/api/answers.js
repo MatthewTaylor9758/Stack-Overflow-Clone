@@ -10,6 +10,7 @@ router.get(
   asyncHandler(async(req, res, next) => {
     console.log('whatttttt')
     const answers = await Answer.findAll({
+      include: { model: User },
       order: [['updatedAt', 'DESC']]
     });
     res.json({ answers });
