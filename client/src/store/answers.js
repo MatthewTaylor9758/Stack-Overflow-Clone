@@ -11,9 +11,13 @@ export const getAnswers = (answers) => {
 
 export const fetchAnswers = () => {
   return async dispatch => {
+    console.log('hello')
     const res = await fetch('/api/answers');
-    const data = res.json();
+    console.log(res);
+    debugger
+    const data = await res.json();
     console.log(data);
+    debugger
     dispatch(getAnswers(data.answers))
     return data;
   }

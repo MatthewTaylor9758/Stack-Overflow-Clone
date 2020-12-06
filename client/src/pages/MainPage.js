@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchQuestions, deleteQuestion } from '../store/questions';
+import { fetchAnswers } from '../store/answers';
 import '../mainPage.css';
 
 function MainPage() {
@@ -53,6 +54,12 @@ function MainPage() {
     getQuestions()
   }
 
+  const getAnswers = async (e) => {
+    const res = await dispatch(fetchAnswers());
+    console.log(res)
+    debugger;
+  }
+
   return (
     <div className='container'>
       <div id='left-side-bar'>
@@ -82,7 +89,7 @@ function MainPage() {
                   <div className='question-content-div'>
                     <div className='question-and-delete'>
                       <h3>
-                        <a href='./answers'>
+                        <a  onClick={getAnswers}>
                           {question.content}
                         </a>
                       </h3>
