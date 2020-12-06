@@ -2,10 +2,12 @@ import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import auth from './auth';
 import questions from './questions';
+import answers from './answers';
 
 const rootReducer = combineReducers({
   auth,
-  questions
+  questions,
+  answers
 });
 
 let storeEnhancer;
