@@ -15,12 +15,12 @@ export const fetchAnswers = () => {
     const res = await fetch('/api/answers');
     console.log(res);
     debugger
-    const data = await res.json();
-    console.log(data);
+    res.answers = await res.json();
+    console.log(res.answers);
     debugger
-    dispatch(getAnswers(data.answers))
-    localStorage.setItem('answers', JSON.stringify(data.answers))
-    return data;
+    dispatch(getAnswers(res.answers.answers))
+    localStorage.setItem('answers', JSON.stringify(res.answers.answers))
+    return res;
   }
 }
 

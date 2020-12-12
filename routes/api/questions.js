@@ -39,6 +39,7 @@ router.get(
       include: { model: User },
       order: [['updatedAt', 'DESC']]
     });
+    console.log(questions[0])
     res.json({ questions });
   })
 );

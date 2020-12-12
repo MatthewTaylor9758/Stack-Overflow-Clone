@@ -59,9 +59,9 @@ function AnswerPage() {
                   <div className='question-content-div'>
                     <div className='question-and-delete'>
                       <h3>{answer.content}</h3>
-                      <p>{answer.userId}</p>
+                      <p>{answer.User.username}</p>
                       {/* username === answer.User.username */}
-                      { true ?
+                      { username === answer.User.username ?
                         <button value={answer.id} className='delete-button' onClick={handleAnswerDelete}>Delete</button>
                         :
                         <div>
@@ -71,7 +71,7 @@ function AnswerPage() {
                     </div>
                     <div className='question-details'>
                       <div className='tags'>Tags Coming Soon!</div>
-                      {/* <div className='username'>answered by {answer.User.username}</div> */}
+                      <div className='username'>answered by {answer.User.username}</div>
                     </div>
                   </div>
                  </div>
