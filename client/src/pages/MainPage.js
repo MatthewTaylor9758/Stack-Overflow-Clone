@@ -55,7 +55,8 @@ function MainPage() {
   }
 
   const getAnswers = async (e) => {
-    const res = await dispatch(fetchAnswers());
+    console.log(e.target.value)
+    const res = await dispatch(fetchAnswers(e.target.value));
     console.log(res)
     debugger;
   }
@@ -89,9 +90,10 @@ function MainPage() {
                   <div className='question-content-div'>
                     <div className='question-and-delete'>
                       <h3>
-                        <a href='./answers' onClick={getAnswers}>
+                      {/* href='./answers' */}
+                        <button value={question.id} onClick={getAnswers}>
                           {question.content}
-                        </a>
+                        </button>
                       </h3>
                       <p>{question.User.username}</p>
                       {username === question.User.username ?

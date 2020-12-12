@@ -9,8 +9,9 @@ export const getAnswers = (answers) => {
   }
 }
 
-export const fetchAnswers = () => {
+export const fetchAnswers = (questionId) => {
   return async dispatch => {
+    console.log(typeof(questionId))
     console.log('hello')
     const res = await fetch('/api/answers');
     console.log(res);
@@ -20,6 +21,7 @@ export const fetchAnswers = () => {
     debugger
     dispatch(getAnswers(res.answers.answers))
     localStorage.setItem('answers', JSON.stringify(res.answers.answers))
+    localStorage.setItem('currentQuestion', questionId.toString())
     return res;
   }
 }
