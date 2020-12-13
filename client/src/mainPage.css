@@ -122,9 +122,38 @@ h3 > a {
   color: black;
 }
 
+button > a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.07em;
+  font-weight: bold;
+}
+
+.question-and-delete > button:hover {
+  background-color: transparent;
+}
+
 #questions {
   background-color: #fdf7e3;
 
+}
+.question-and-delete > button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+button > h3 {
+  margin: 0;
+  /* font-size: 1.17em; */
+  height: 3.21em;
+}
+
+button > h3 > a {
+  font-size: 1.07em;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .question-content-div {
