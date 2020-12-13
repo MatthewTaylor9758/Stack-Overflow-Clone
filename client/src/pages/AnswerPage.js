@@ -11,6 +11,7 @@ function AnswerPage() {
   const username = useSelector(state => state.auth.username);
   const questions = useSelector(state => state.questions);
   const answers = useSelector(state => state.answers);
+  const displayQuestion = useSelector(state => state.answers[0].content);
 
   // useEffect(() => {
   //   console.log('testing')
@@ -52,10 +53,10 @@ function AnswerPage() {
             <button onClick={toProfile}>Profile</button>
           </div>
         </div>
-        {/* <div>
+        <div>
           {displayQuestion}
-        </div> */}
-        {answers.length ? answers.map( answer => {
+        </div>
+        {answers.length ? answers.slice(1).map( answer => {
           return <div className='question-div'>
                   <div className='score-div'>
                     <div className='score'>{answer.score}</div>

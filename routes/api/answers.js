@@ -15,9 +15,9 @@ router.put(
       include: [{ model: User }],
       order: [['updatedAt', 'DESC']]
     });
-    const question = await Question.findByPk(questionId);
+    const question = await Question.findByPk(question_id);
     // console.log(answers);
-    // answers.unshift(question);
+    answers.unshift(question);
     console.log(answers)
     return res.json({ answers });
   })
