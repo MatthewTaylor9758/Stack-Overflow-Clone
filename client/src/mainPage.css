@@ -141,12 +141,18 @@ button > a {
   padding: 0;
   margin: 0;
   background: transparent;
+  text-align: start;
+  max-width: 75%;
+  height: fit-content;
 }
 
 button > h3 {
   margin: 0;
   /* font-size: 1.17em; */
-  height: 3.21em;
+  /* height: 3.21em; */
+  padding-bottom: 1.07em;
+  height: fit-content;
+  min-height: fit-content;
 }
 
 button > h3 > a {
@@ -154,6 +160,7 @@ button > h3 > a {
   height: 100%;
   display: flex;
   align-items: center;
+  /* height: fit-content; */
 }
 
 .question-content-div {

@@ -97,7 +97,6 @@ function MainPage() {
                             </a>
                           </h3>
                         </button>
-                      <p>{question.User.username}</p>
                       {username === question.User.username ?
                         <button value={question.id} className='delete-button' onClick={handleQuestionDelete}>Delete</button>
                         :
