@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import { getCurrQuestion } from './currentQuestion';
 
 const GET_ANSWERS = 'answers/GET_ANSWERS';
 
@@ -13,7 +14,14 @@ export const fetchAnswers = (questionId) => {
   return async dispatch => {
     console.log(typeof(questionId))
     console.log('hello')
-    const res = await fetch('/api/answers');
+    const res = await fetch('/api/answers', {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json',
+        'XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+      },
+      body: JSON.stringify({ questionId })
+    });
     console.log(res);
     debugger
     res.answers = await res.json();
@@ -21,7 +29,7 @@ export const fetchAnswers = (questionId) => {
     debugger
     dispatch(getAnswers(res.answers.answers))
     localStorage.setItem('answers', JSON.stringify(res.answers.answers))
-    localStorage.setItem('currentQuestion', questionId.toString())
+    localStorage.setItem('currentQuestion', questionId)
     return res;
   }
 }

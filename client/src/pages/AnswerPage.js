@@ -4,6 +4,8 @@ import { fetchQuestions, deleteQuestion } from '../store/questions';
 import '../answerPage.css';
 import { fetchAnswers } from '../store/answers';
 
+// const displayQuestion = JSON.parse(localStorage.getItem('currentQuestion'));
+
 function AnswerPage() {
   const dispatch = useDispatch();
   const username = useSelector(state => state.auth.username);
@@ -50,6 +52,9 @@ function AnswerPage() {
             <button onClick={toProfile}>Profile</button>
           </div>
         </div>
+        {/* <div>
+          {displayQuestion}
+        </div> */}
         {answers.length ? answers.map( answer => {
           return <div className='question-div'>
                   <div className='score-div'>

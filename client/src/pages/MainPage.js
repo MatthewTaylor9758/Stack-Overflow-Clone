@@ -55,9 +55,10 @@ function MainPage() {
   }
 
   const getAnswers = async (e) => {
-    console.log(e.target.value)
+    console.log(e.target)
     const res = await dispatch(fetchAnswers(e.target.value));
     console.log(res)
+    window.location.href = './answers';
     debugger;
   }
 
@@ -91,11 +92,7 @@ function MainPage() {
                     <div className='question-and-delete'>
                       {/* href='./answers' */}
                         <button className='question-button' value={question.id} onClick={getAnswers}>
-                          <h3>
-                            <a href='./answers'>
                                 {question.content}
-                            </a>
-                          </h3>
                         </button>
                       {username === question.User.username ?
                         <button value={question.id} className='delete-button' onClick={handleQuestionDelete}>Delete</button>

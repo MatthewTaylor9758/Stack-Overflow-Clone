@@ -145,6 +145,7 @@ button > a {
   text-align: start;
   max-width: 75%;
   height: fit-content;
+  z-index: 1000;
 }
 
 button > h3 {

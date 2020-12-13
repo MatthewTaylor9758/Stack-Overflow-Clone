@@ -57,6 +57,7 @@ button {
 #left-side-bar {
   width: 164px;
   position: sticky;
+  top: 47px;
   height: 100vh;
   text-align: center;
   background-color: white;
