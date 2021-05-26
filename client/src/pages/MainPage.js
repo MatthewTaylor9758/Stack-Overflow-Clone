@@ -10,6 +10,8 @@ function MainPage() {
   const username = useSelector(state => state.auth.username);
   const questions = useSelector(state => state.questions);
 
+  // 5-26-21 JUST A COMMENT SO I CAN PUSH NEW HEROKU BUILD
+
   // useEffect(() => {
   //   let res;
   //   (async function goGetQuestions() {
