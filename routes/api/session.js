@@ -2,6 +2,8 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { check } = require("express-validator");
 
+const testDb = require('../../config/database.js')
+
 const { User } = require("../../db/models");
 const { handleValidationErrors } = require("../util/validation");
 const { requireUser, generateToken, AuthenticationError, getCurrentUser } = require("../util/auth");
@@ -32,6 +34,7 @@ router.get(
   "/",
   getCurrentUser,
   asyncHandler(async function (req, res, next) {
+    console.log(testDb.production.use_env_variable);
     return res.json({
       user: req.user || {}
     });

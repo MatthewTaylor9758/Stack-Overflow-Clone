@@ -5,7 +5,7 @@ import { Redirect, NavLink } from 'react-router-dom';
 import '../loginPage.css';
 import stackOverflowLogo from '../images/stackOverflowLogo.png';
 import { fetchQuestions } from '../store/questions';
-
+// import { production } from 'config/database.js'
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,6 +13,7 @@ function LoginPage() {
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
+    console.log(process.env);
     e.preventDefault();
     dispatch(login(username, password));
     dispatch(fetchQuestions())
