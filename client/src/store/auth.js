@@ -11,6 +11,7 @@ export const setUser = (user) => {
 
 export const login = (username, password) => {
   return async dispatch => {
+    console.log(username, password);
     const res = await fetch('/api/session', {
       method: 'put',
       headers: {
