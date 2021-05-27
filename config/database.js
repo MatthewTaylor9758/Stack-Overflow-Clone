@@ -1,4 +1,4 @@
-const config = require('./');
+const config = require('./index');
 const db = config.db;
 const username = db.username;
 const password = db.password;
@@ -12,12 +12,6 @@ module.exports = {
     database,
     host,
     dialect: 'postgres',
-    seederStorage: 'sequelize',
-  },
-  test: {
-    dialect: "sqlite",
-    DB_CONN: "sqlite.memory",
-    logging: false,
     seederStorage: 'sequelize',
   },
   production: {
