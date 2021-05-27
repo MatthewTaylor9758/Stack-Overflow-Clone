@@ -12,8 +12,10 @@
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
+    "@babel/core": "^7.14.3",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
+    "core-js": "^3.13.0",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
     "debug": "^4.1.1",
@@ -25,13 +27,14 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "~1.9.1",
     "per-env": "^1.0.2",
-    "pg": "^8.0.3",
+    "pg": "^8.3.0",
     "react-redux": "^7.2.1",
     "react-scripts": "4.0.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.21.7",
     "sequelize-cli": "^5.5.1",
+    "typescript": "^2.9.2",
     "uuid": "^8.0.0"
   },
   "devDependencies": {

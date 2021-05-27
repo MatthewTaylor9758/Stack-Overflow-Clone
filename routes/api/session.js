@@ -2,12 +2,13 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { check } = require("express-validator");
 
-const testDb = require('../../config/database.js')
+const testDb = require(__dirname + '/../../config/database.js')['production']
 
 const { User } = require("../../db/models");
 const { handleValidationErrors } = require("../util/validation");
 const { requireUser, generateToken, AuthenticationError, getCurrentUser } = require("../util/auth");
 const { jwtConfig: { expiresIn }} = require('../../config');
+const { production } = require("../../config/database");
 // const { getCurrentUser, generateToken } = require("../util/auth");
 
 const router = express.Router();
@@ -34,7 +35,7 @@ router.get(
   "/",
   getCurrentUser,
   asyncHandler(async function (req, res, next) {
-    console.log(testDb.production.use_env_variable);
+    console.log(testDb);
     return res.json({
       user: req.user || {}
     });
