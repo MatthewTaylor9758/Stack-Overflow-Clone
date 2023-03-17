@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "install": "npm install && npm --prefix client install client",
+    "install": "npm prefix . install && npm --prefix client install client",
     "start": "per-env",
     "start:development": "nodemon --ignore client/ -r dotenv/config ./bin/www",
     "start:production": "./bin/www",
@@ -12,7 +12,7 @@
     "db:seed:all": "dotenv sequelize db:seed:all",
     "render-postbuild": "npm run build --prefix client",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-    "sequelize": "npm run --prefix backend sequelize",
+    "sequelize": "npm run sequelize",
     "sequelize-cli": "npm run sequelize-cli",
     "build": "npm run build"
   },
