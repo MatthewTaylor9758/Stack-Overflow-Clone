@@ -3,13 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "install": "npm install && npm --prefix client install client",
     "start": "per-env",
     "start:development": "nodemon --ignore client/ -r dotenv/config ./bin/www",
     "start:production": "./bin/www",
     "db:create": "dotenv sequelize db:create",
     "db:migrate": "dotenv sequelize db:migrate",
     "db:seed:all": "dotenv sequelize db:seed:all",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "render-postbuild": "npm run build --prefix client",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
+    "sequelize": "npm run --prefix backend sequelize",
+    "sequelize-cli": "npm run sequelize-cli",
+    "build": "npm run build"
   },
   "dependencies": {
     "@babel/core": "^7.14.3",

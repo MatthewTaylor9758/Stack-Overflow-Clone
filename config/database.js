@@ -24,5 +24,8 @@ module.exports = {
       }
     },
     seederStorage: 'sequelize',
+    define: {         // define schema here
+      schema: process.env.SCHEMA
+    }
   },
 };
