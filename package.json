@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "install": "npm --prefix . install && npm --prefix client install client",
+    "install": "npm install . && npm --prefix client install client",
     "start": "per-env",
     "start:development": "nodemon --ignore client/ -r dotenv/config ./bin/www",
     "start:production": "./bin/www",
