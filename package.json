@@ -14,7 +14,7 @@
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "sequelize": "npm run sequelize",
     "sequelize-cli": "npm run sequelize-cli",
-    "build": "npm run build prefix ."
+    "build": "npm run build --prefix ."
   },
   "dependencies": {
     "@babel/core": "^7.14.3",
