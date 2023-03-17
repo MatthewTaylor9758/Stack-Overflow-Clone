@@ -20,7 +20,7 @@ Users can view the main page with all the questions they and other users have as
 </br>
 </br>
 ## Application Architecture
-Placeholder for diagram that will show technologies and how they interact with each other.
+![Stack Overflow Architecture](https://raw.githubusercontent.com/MatthewTaylor9758/Stack-Overflow-Clone/master/client/src/images/Stack%20Overflow%20Architecture.png)
 </br>
 </br>
 ## Front End Overview
@@ -132,5 +132,5 @@ I sincerely apprectiate the time you have taken out of your day to read this far
 
 <ul>
   <li>Gifs: Giphy.com</li>
-  <li>Architecture Diagram is courtesy of</li> 
+  <li>Architecture Diagram is courtesy of https://app.diagrams.net/</li> 
 </ul>
