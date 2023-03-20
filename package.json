@@ -14,7 +14,7 @@
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "sequelize": "npm run sequelize",
     "sequelize-cli": "npm run sequelize-cli",
-    "build": "npm run build"
+    "build": "node psql-setup-script.js"
   },
   "dependencies": {
     "@babel/core": "^7.14.3",
