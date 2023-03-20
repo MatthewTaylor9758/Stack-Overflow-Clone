@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "install": "npm --prefix client install",
-    "start": "per-env",
+    "start": "node ./bin/www",
     "start:development": "nodemon --ignore client/ -r dotenv/config ./bin/www",
     "start:production": "./bin/www",
     "db:create": "dotenv sequelize db:create",
