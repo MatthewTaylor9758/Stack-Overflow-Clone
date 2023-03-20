@@ -10,7 +10,7 @@
     "db:create": "dotenv sequelize db:create",
     "db:migrate": "dotenv sequelize db:migrate",
     "db:seed:all": "dotenv sequelize db:seed:all",
-    "render-postbuild": "npm run build --prefix client",
+    "render-postbuild": "npm  --prefix client run build",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "sequelize": "npm run sequelize",
     "sequelize-cli": "npm run sequelize-cli",
