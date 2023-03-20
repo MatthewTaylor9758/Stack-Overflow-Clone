@@ -12,9 +12,9 @@
     "db:seed:all": "dotenv sequelize db:seed:all",
     "render-postbuild": "npm run build --prefix client",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-    "sequelize": "npm run --prefix . sequelize",
-    "sequelize-cli": "npm run --prefix . sequelize-cli",
-    "build": "npm run build --prefix ."
+    "sequelize": "npm run sequelize",
+    "sequelize-cli": "npm run sequelize-cli",
+    "build": "npm run build"
   },
   "dependencies": {
     "@babel/core": "^7.14.3",
